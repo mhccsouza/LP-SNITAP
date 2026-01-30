@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --snitap-sun: #ffcd1e;
+    --snitap-sky-mid: #06b6d4;
+    --snitap-sky-light: #67e8f9;
+    --snitap-joy-mid: #db2777;
+    --snitap-joy-light: #f472b6;
+    --snitap-leaf-mid: #16a34a;
+
+    --bg-color: #fafafa;
+    --bg-text: #000000;
+
+    --ff-syne: "Syne", sans-serif;
+    --ff-mont: "Montserrat", sans-serif;
+    --ff-inter: "Inter", sans-serif;
+
+    --fs-sm: .75rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.5rem;
+    --fs-xl: 2rem;
+
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    --px-lg: 1.5rem;
+}
+
+
+html {
+    color: var(--bg-text);
+    font-size: var(--fs-base);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+@media (width >= 80em) {
+    :root {
+        --fs-sm: .875rem;
+        --fs-lg: 2.5rem;
+        --fs-xl: 4rem;
+
+        --px-lg: 2rem;
+    }
+}
