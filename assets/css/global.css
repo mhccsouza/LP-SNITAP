@@ -46,6 +46,11 @@ body {
     background-color: var(--bg-color);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @media (width >= 80em) {
     :root {
         --fs-sm: .875rem;
