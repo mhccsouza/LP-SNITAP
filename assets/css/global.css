@@ -40,6 +40,7 @@
 html {
     color: var(--bg-text);
     font-size: var(--fs-base);
+    overflow: hidden;
 }
 
 body {
@@ -49,6 +50,14 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font: var(--fw-bold) var(--fs-xl)/1.25 var(--ff-syne);
 }
 
 @media (width >= 80em) {

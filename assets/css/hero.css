@@ -1,0 +1,254 @@
+section#hero {
+    padding-block: 1rem 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+
+    & div:has(h1) {
+
+        --line-height: 2.5rem;
+        --bounce-start: 2.5px;
+
+        & h1 {
+            max-width: 19.5rem;
+
+            & div {
+                --height: 2.5rem;
+                display: inline-block;
+                width: min-content;
+                height: var(--height);
+                overflow: hidden;
+                vertical-align: bottom;
+
+                & span {
+                    display: inline-block;
+                    animation: slideUp 6s 2s infinite ease;
+                }
+
+                & span:nth-child(1), & span:nth-child(4) {
+                    color: var(--snitap-sky-mid);
+                }
+                & span:nth-child(2) {
+                    color: var(--snitap-joy-mid);
+                }
+                & span:nth-child(3) {
+                    color: var(--snitap-leaf-mid);
+                }
+            }
+        }
+
+        & .buttons {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 1.5rem;
+            margin-top: 3rem;
+
+            & .btn {
+                width: fit-content;
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                font: var(--fw-medium) var(--fs-base)/1.5 var(--ff-mont);
+                text-transform: uppercase;
+                transition: scale 500ms ease-in-out;
+                
+                & img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    object-fit: cover;
+                }
+
+                &.buy {
+                    border-radius: 5rem;
+                    padding: 1.5rem 3rem;
+                    background-color: var(--snitap-sun);
+                }
+
+                &.play span {
+                    background-color: white;
+                    border-radius: 50%;
+                    padding: 1.5rem;
+                    display: flex;
+                }
+
+                &:hover {
+                    scale: 1.1;
+                }
+            }
+
+            & .shadow {
+                box-shadow: 0px 36px 15px rgba(0, 0, 0, 0.01), 
+                0px 20px 12px rgba(0, 0, 0, 0.05), 
+                0px 9px 9px rgba(0, 0, 0, 0.09), 
+                0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    & div:has(.ellipse) {
+        & .ellipse {
+            --width: 19.5rem;
+            --height: 19.5rem;
+            width: var(--width);
+            height: var(--height);
+            background-color: var(--snitap-sky-light);
+            border-radius: 50%;
+            position: relative;
+            transform: translateX(200%);
+            animation: slideIn 3s 200ms ease-in-out forwards;
+
+            & img[src*="patins"] {
+                position: absolute;
+                inset: 0;
+                transform: translateX(200%);
+                animation: slideIn 3s ease-in-out forwards, patinsMove 3s infinite alternate-reverse both;
+            }
+
+            & img[src*="Stars 1"] {
+                --width: 3.503125rem;
+                --height: 2.86375rem;
+                --top: 5.900625rem;
+                --left: 0.319375rem;
+                opacity: 0;
+                position: absolute;
+                width: var(--width);
+                height: var(--height);
+                top: var(--top);
+                left: var(--left);
+                transform: translateX(400%);
+                animation: slideIn 2s 800ms ease forwards, appear 100ms 800ms forwards;
+            }
+
+            & img[src*="Stars 2"] {
+                --width: 1.598125rem;
+                --height: 2.3975rem;
+                --bottom: 5.78875rem;
+                --right: -0.4rem;
+                opacity: 0;
+                position: absolute;
+                width: var(--width);
+                height: var(--height);
+                bottom: var(--bottom);
+                right: var(--right);
+                transform: translateX(400%);
+                animation: slideIn 2.2s 800ms ease forwards, appear 200ms 800ms forwards;
+            }
+        }
+    }
+}
+@keyframes slideIn {
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes patinsMove {
+    to {
+        transform: translateX(-20px);
+    }
+}
+@keyframes appear {
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+
+    0%, 22% {
+        transform: translateY(0);
+    }
+    23% {
+        transform: translateY(calc(var(--line-height) * -1 - calc(var(--bounce-start) * 3)));
+    }
+    25% {
+        transform: translateY(calc(var(--line-height) * -1 + calc(var(--bounce-start) * 2)));
+    }
+    27% {
+        transform: translateY(calc(var(--line-height) * -1 - calc(var(--bounce-start) * 1)));
+    }
+    29% {
+        transform: translateY(calc(var(--line-height) * -1 + calc(var(--bounce-start) * 1)));
+    }
+    33%, 55% {
+        transform: translateY(calc(var(--line-height) * -1));
+    }
+    56% {
+        transform: translateY(calc(var(--line-height) * -2 - calc(var(--bounce-start) * 3)));
+    }
+    58% {
+        transform: translateY(calc(var(--line-height) * -2 + calc(var(--bounce-start) * 2)));
+    }
+    60% {
+        transform: translateY(calc(var(--line-height) * -2 - calc(var(--bounce-start) * 1)));
+    }
+    62% {
+        transform: translateY(calc(var(--line-height) * -2 + calc(var(--bounce-start) * 1)));
+    }
+    66%, 88% {
+        transform: translateY(calc(var(--line-height) * -2));
+    }
+    89% {
+        transform: translateY(calc(var(--line-height) * -3 - calc(var(--bounce-start) * 3)));
+    }
+    91% {
+        transform: translateY(calc(var(--line-height) * -3 + calc(var(--bounce-start) * 2)));
+    }
+    93% {
+        transform: translateY(calc(var(--line-height) * -3 - calc(var(--bounce-start) * 1)));
+    }
+    95% {
+        transform: translateY(calc(var(--line-height) * -3 + calc(var(--bounce-start) * 1)));
+    }
+    100% {
+        transform: translateY(calc(var(--line-height) * -3));
+    }
+
+}
+
+@media (width >= 80em) {
+    section#hero {
+        padding-block: 2.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+
+        & div:has(h1) {
+            --line-height: 5rem;
+            --bounce-start: 5px;
+
+            & h1 {
+                max-width: 40rem;
+
+                & div {
+                    --height: 5rem;
+                }
+            }
+            & .buttons {
+                flex-direction: row;
+            }
+        }
+
+        & div:has(.ellipse) {
+            & .ellipse {
+                --width: 30.5rem;
+                --height: 30.5rem; 
+
+                & img[src*="Stars 1"] {
+                    --width: 5.5rem;
+                    --height: 4.5rem;
+                    --top: 9.25rem;
+                    --left: -.5rem;
+                }
+                & img[src*="Stars 2"] {
+                    --width: 2.5rem;
+                    --height: 3.75rem;
+                    --bottom: 9.0625rem;
+                    --right: -0.6rem;
+                }
+            }
+        }
+    }
+}
