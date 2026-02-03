@@ -1,0 +1,54 @@
+section#banner {
+    --padding-block: 1.5rem;
+    width: 100%;
+    padding-block: var(--padding-block);
+    overflow: hidden;
+
+    & .scroller {
+        width: 100%;
+        overflow: hidden;
+        padding-block: 1rem;
+
+        & .rolling {
+            display: flex;
+            flex-shrink: 0;
+            gap: 1.5rem;
+            animation: bannerScroll 20s infinite linear both;
+            & .rolling-content {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                & span {
+                    font: var(--fw-bold) 1.25rem/1.2 var(--ff-syne);
+                }
+            }
+        }
+    }
+
+    & .bg-gradient-animate {
+        width: 100%;
+        background: linear-gradient(45deg, var(--snitap-sky-light), var(--snitap-joy-light));
+        background-size: 400%;
+        background-position: 0 50%;
+
+        animation: bg-gradient 20s ease infinite;
+    }
+}
+
+@keyframes bannerScroll {
+   to {
+    transform: translateX(-50%);
+   }
+}
+
+@keyframes bg-gradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (width >= 80em){
+    section#banner {
+        --padding-block: 2.5rem;
+    }
+}

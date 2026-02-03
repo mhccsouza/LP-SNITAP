@@ -40,7 +40,6 @@
 html {
     color: var(--bg-text);
     font-size: var(--fs-base);
-    overflow: hidden;
 }
 
 body {
