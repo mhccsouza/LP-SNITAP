@@ -1,0 +1,111 @@
+main#gallery {
+    & header {
+        text-align: center;
+
+        & span {
+            font: var(--fw-medium) var(--fs-sm)/1.5 var(--ff-mont);
+            text-transform: uppercase;
+        }
+
+        & h2 {
+            font: var(--fw-bold) var(--fs-lg)/1.5 var(--ff-mont);
+            margin-top: .5rem;
+        }
+    }
+
+    .gallery-content {
+        margin-top: 1.5rem;
+        display: grid;
+        gap: 2rem;
+
+        & figure {
+            width: 100%;
+            height: auto;
+            border-radius: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            line-height: 0;
+
+            & > img {
+                --height: 16rem;
+                width: 100%;
+                height: var(--height);
+                object-fit: cover;
+                transition: scale 500ms;
+            }
+
+            &:hover {
+                & > img {
+                    scale: 1.1;
+                }
+
+                & figcaption {
+                    transform: translateY(0);
+                }
+            }
+            
+
+            & figcaption {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                padding: 1.5rem 2rem;
+                transform: translateY(100%);
+                transition: transform 500ms ease-in;
+                
+                
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.5rem;
+
+                background: linear-gradient(to top, rgb(0 0 0 / .64), rgb(0 0 0 / 0));
+
+                & > img {
+                    width: 2rem;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                & span {
+                    font: var(--fw-medium) var(--fs-sm)/1.6 var(--ff-mont);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media(width >= 80em) {
+    main#gallery {
+        .gallery-content {
+            grid-template-areas: 
+            "A B B"
+            "C C D";
+            gap: 2.5rem;
+
+            & figure {
+                & > img {
+                    --height: 25rem;
+                }
+            }
+
+            & figure:nth-child(1) {
+                grid-area: A;
+            }
+
+            & figure:nth-child(2) {
+                grid-area: B;
+            }
+
+            & figure:nth-child(3) {
+                grid-area: C;
+            }
+
+            & figure:nth-child(4) {
+                grid-area: D;
+            }
+        }
+    }
+}
