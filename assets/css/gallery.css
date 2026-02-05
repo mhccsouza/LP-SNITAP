@@ -26,6 +26,14 @@ main#gallery {
             overflow: hidden;
             line-height: 0;
 
+            animation: image-apper linear backwards;
+            animation-timeline: view();
+            animation-range: 100px 300px;
+
+            &[data-delay] {
+                animation-range: 150px 350px;
+                }
+
             & > img {
                 --height: 16rem;
                 width: 100%;
@@ -74,6 +82,13 @@ main#gallery {
                 }
             }
         }
+    }
+}
+
+@keyframes image-apper {
+    from {
+        opacity: 0;
+        transform: translateY(100%)
     }
 }
 
