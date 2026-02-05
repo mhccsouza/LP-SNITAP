@@ -1,0 +1,95 @@
+footer#footer {
+    padding-block: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    & .logomarca {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        & > img {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        & span {
+            font: var(--fw-bold) 1.25rem/1.3 var(--ff-syne);
+        }
+    }
+
+    & .links {
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            & li a {
+                width: fit-content;
+                font-family: var(--ff-mont);
+                line-height: 1.5;
+                font-weight: var(--fw-medium);
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: var(--snitap-sky-mid);
+                    bottom: 0;
+                    left: 0;
+                    transform: scaleX(0);
+                    opacity: 0;
+                    transition: transform 200ms linear;
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    & .social-links {
+        & ul {
+            display: flex;
+            & li a {
+                width: 2.5rem;
+                height: 2.5rem;
+                display: inline-block;
+                border-radius: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                transition: background-color 500ms linear;
+
+                &:hover {
+                    background-color: var(--snitap-sun);
+                }
+
+                & img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media(width >= 80em) {
+    footer#footer {
+        padding: 4rem 2rem;
+        flex-direction: row;
+        justify-content: space-between;
+
+        & .links {
+            & ul {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+    }
+}
